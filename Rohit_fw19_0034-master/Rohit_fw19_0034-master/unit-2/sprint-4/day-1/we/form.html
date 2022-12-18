@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="Number" id="age" placeholder="Enter Age">
+        <select name="Gender" id="gender">
+            <option value="">gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="text" id="mobile" placeholder="Enter Mobile Number">
+        <input type="submit" />
+    
+    </form>
+    <form action=""></form>
+</body>
+</html>
+<script>
+    let arr=[];
+    document.querySelector("form").addEventListener("submit",myfunction);
+   
+    function myfunction (event){
+        event.preventDefault();
+        let userobj={
+            name:document.querySelector("#name").value,
+            age:document.querySelector("#age").value,
+            gender:document.querySelector("#gender").value,
+            email:document.querySelector("#email").value,
+            mobile:document.querySelector("#mobile").value
+        }
+        arr.push(userobj);
+        console.log(arr);
+       
+    }
+</script>

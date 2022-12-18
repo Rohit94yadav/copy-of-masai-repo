@@ -1,0 +1,49 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "learn-redux",
+      "status": false
+    },
+    {
+      "title": "juuu",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "hhh",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "kkk",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "hhh",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "hhjj",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "kjkk",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "ffd",
+      "status": false,
+      "id": 8
+    },
+    {
+      "title": "oop",
+      "status": false,
+      "id": 9
+    }
+  ]
+}

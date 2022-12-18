@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "status": false
+    },
+    {
+      "title": "fff",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "hello react",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "hii rrr",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "hello html",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "ggg",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "hello css",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "pooja",
+      "status": false,
+      "id": 8
+    }
+  ]
+}

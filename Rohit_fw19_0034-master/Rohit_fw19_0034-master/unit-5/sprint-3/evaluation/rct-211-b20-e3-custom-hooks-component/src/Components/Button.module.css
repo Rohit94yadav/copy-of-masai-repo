@@ -1,0 +1,35 @@
+.red {
+    background-color: red;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  .orange {
+    background-color: orange;
+  }
+  .green {
+    background-color: green;
+  }
+  .white {
+    background-color: white;
+  }
+  .sm {
+    font-size: 12px;
+  }
+  .md {
+    font-size: 15px;
+  }
+  .lg {
+    font-size: 18px;
+  }
+  .xl {
+    font-size: 22px;
+  }
+
+  .ghost {
+    border: none;
+  }
+  .outline {
+    border: 1px solid;
+  }
+  

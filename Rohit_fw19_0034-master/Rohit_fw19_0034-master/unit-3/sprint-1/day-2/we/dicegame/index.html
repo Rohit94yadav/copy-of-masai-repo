@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background-color: teal;
+            font-size: larger;
+            width: 60%;
+            height: 470px;
+            margin-top: 50px;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            margin-top: 50px;
+            background-color: burlywood;
+            font-weight: bold;
+            color: white;
+            border-radius: 12px;
+            border: transparent;
+        }
+        #main>h1{
+            color: rgb(102, 39, 39);
+        }
+        .forall{
+            border: 1px solid white;
+            width: 70px;
+            height: 90px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            padding: 5px;
+            background-color: wheat;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>DICE GAME</h1>
+        <div>
+            <h1>Result</h1>
+        </div>
+        <div class="forall" id="first">DICE 1</div>
+        <div class="forall" id="second">DICE 2</div>
+        <div class="forall" id="third">DICE 3</div>
+        
+        <button type="button" id="btn" onclick="rollthedice()">Roll The Dice</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    function rollthedice() {
+            
+                var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber3 = Math.floor(Math.random() * 6) + 1;
+                console.log(randomNumber1,randomNumber2,randomNumber3)
+  
+               
+  
+                if (randomNumber1 === randomNumber2 && randomNumber1 === randomNumber3) {
+                    document.querySelector("h1").innerHTML = "Draw!";
+
+                    document.querySelector("#first").textContent=randomNumber1;
+                    document.querySelector("#second").textContent=randomNumber2;
+                    document.querySelector("#third").textContent=randomNumber3;
+                }
+  
+                else if (randomNumber1 > randomNumber2 && randomNumber1 > randomNumber3) {
+                    document.querySelector("h1").innerHTML
+                        = ("First WINS!");
+                        document.querySelector("#first").textContent=randomNumber1;
+                        document.querySelector("#first").style.backgroundColor = "green"
+                    document.querySelector("#second").textContent=randomNumber2;
+                    document.querySelector("#third").textContent=randomNumber3;
+                }
+                else if (randomNumber2 > randomNumber1 && randomNumber2 > randomNumber3) {
+                    document.querySelector("h1").innerHTML
+                        = ("Second WINS!");
+                        document.querySelector("#first").textContent=randomNumber1;
+                        document.querySelector("#first").style.backgroundColor = "white"
+                    document.querySelector("#second").textContent=randomNumber2;
+                    document.querySelector("#third").textContent=randomNumber3;
+                }
+  
+                else {
+                    document.querySelector("h1").innerHTML
+                        = ("Third WINS!");
+                        document.querySelector("#first").textContent=randomNumber1;
+                        document.querySelector("#first").style.backgroundColor = "white"
+                    document.querySelector("#second").textContent=randomNumber2;
+                    document.querySelector("#second").textContent=randomNumber2;
+                    document.querySelector("#third").textContent=randomNumber3;
+                }
+           
+        }
+</script>

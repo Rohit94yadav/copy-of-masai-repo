@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            gap: 100px;
+            font-weight: bolder;
+            font-size: larger;
+            color: rgb(85, 18, 18);
+            background-color: coral;
+        }
+        #navbar>h2{
+            background-color: burlywood;
+            padding: 15px;
+        }
+        h1{
+            text-align: center;
+            background-color: cornsilk;
+            padding: 10px;
+            color: rgb(88, 26, 26);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        input{
+            margin-top: 30px;
+            width: 500px;
+            height: 30px;
+            margin-left: 40px;
+        }
+        #navbar>button{
+            background-color: burlywood;
+            padding: 15px;
+            height: 95px;
+            margin: auto;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <button>
+            <a href="./dashboard.html">Dashboard</a>
+        </button>
+        <h2 id="web15">ft-web-15</h2>
+        <h2 id="web16">ft-web-16</h2>
+        <h2 id="web17">ft-web-17</h2>
+        <h2 id="web18">ft-web-18</h2>
+        <h2 id="web19">ft-web-19</h2>
+    </div>
+    
+    <h1>ADD STUDENT DATA</h1>
+    <form id="studentdata" onsubmit="storedata(event)">
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="course" placeholder="Course">
+    <input type="number" id="unit" placeholder="Unit">
+    <input type="text" id="image" placeholder="Image">
+    <input type="number" id="batch" placeholder="Batch">
+    <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+    
+
+function student(n,c,u,i,b){
+
+    this.name=n;
+    this.course=c;
+    this.unit=u;
+    this.image=i;
+    this.batch=`ft-web-${b}`;
+}
+    
+
+function storedata(e){
+        e.preventDefault();
+        let form= document.getElementById("studentdata");
+
+        let name= form.name.value;
+        let course = form.course.value;
+        let unit = form.unit.value;
+        let image= form.image.value;
+        let batch = form.batch.value;
+        
+        let stu = new student(name,course,unit,image,batch);
+        
+        let data = JSON.parse(localStorage.getItem("students")) || [];
+
+        data.push(stu);
+
+        localStorage.setItem("students",JSON.stringify(data));
+        // console.log(stu);
+    }
+
+    function counter(){
+        let data = JSON.parse(localStorage.getItem("students")) || [];
+
+        let obj= {}; 
+
+        for(let i=0 ; i < data.length ; i++){
+            if(obj[data[i].batch]===undefined){
+                obj[data[i].batch]=1;
+            
+        }else{
+            obj[data[i].batch]++
+        }
+    }
+    console.log(obj)
+    
+    
+    document.getElementById("web15").textContent=`ft-web-15 (${Object.values(obj)[3]})`
+    document.getElementById("web16").textContent=`ft-web-16 (${Object.values(obj)[0]})`
+    document.getElementById("web17").textContent=`ft-web-17 (${Object.values(obj)[4]})`
+    document.getElementById("web18").textContent=`ft-web-18 (${Object.values(obj)[2]})`
+    document.getElementById("web19").textContent=`ft-web-19 (${Object.values(obj)[1]})`
+    
+
+    }
+
+    counter();
+</script>

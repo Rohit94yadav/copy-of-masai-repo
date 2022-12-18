@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+        //    ********Using Prorotype model**********
+
+    let automobileParts={
+        company : "BMW",
+        tire    : "MRF",
+        Powersteering : "available",
+        airbags  :  "6",
+        class     : "sedan",
+    };
+
+
+    let car1 = Object.create(automobileParts);
+    car1.price = 8000000;
+    console.log(car1);
+
+    let car2 = Object.create(automobileParts);
+    car2.model = "x6";
+    console.log(car2);
+
+    // ************using Constructor Function**********
+
+
+    function automobilenewparts (c,t,p,a,cl){
+
+        this.company = c;
+        this.tire= t;
+        this.Powersteering= p;
+        this.airbags = a;
+        this.class= cl;
+    }
+
+    let car3 = new automobilenewparts('BMW','MRF','available','6','sedan');
+    console.log(car3)
+
+</script>

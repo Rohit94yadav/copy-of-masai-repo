@@ -1,0 +1,107 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "pooja",
+      "gender": "female",
+      "staus": "Married"
+    },
+    {
+      "id": 2,
+      "name": "Rohit",
+      "gender": "male",
+      "staus": "Married"
+    },
+    {
+      "name": "kittu",
+      "gender": "",
+      "role": "",
+      "maritalStatus": "",
+      "id": 3
+    },
+    {
+      "name": "dfer",
+      "gender": "",
+      "role": "",
+      "maritalStatus": "",
+      "id": 4
+    },
+    {
+      "name": "dc",
+      "gender": "Male",
+      "role": "",
+      "maritalStatus": "",
+      "id": 5
+    },
+    {
+      "name": "Pooja Yadav",
+      "gender": "Female",
+      "role": "fullstrack",
+      "maritalStatus": "Unmarried",
+      "id": 6
+    },
+    {
+      "name": "rohit yadav",
+      "gender": "Male",
+      "role": "Devloper",
+      "maritalStatus": "Married",
+      "id": 7
+    },
+    {
+      "name": "ggggggggggg",
+      "gender": "Male",
+      "role": "Devloper",
+      "maritalStatus": "Married",
+      "id": 8
+    },
+    {
+      "name": "hhhhhhhhhhh",
+      "gender": "Female",
+      "role": "FrontEnd",
+      "maritalStatus": "Married",
+      "id": 9
+    },
+    {
+      "name": "hhhhhhhhhhh",
+      "gender": "Female",
+      "role": "FrontEnd",
+      "maritalStatus": "Married",
+      "id": 10
+    },
+    {
+      "name": "aaaaaaaaaaaaa",
+      "gender": "",
+      "role": "Devloper",
+      "maritalStatus": "Unmarried",
+      "id": 11
+    },
+    {
+      "name": "ffffff",
+      "gender": "Male",
+      "role": "backend",
+      "maritalStatus": "Unmarried",
+      "id": 12
+    },
+    {
+      "name": "ffffff",
+      "gender": "Male",
+      "role": "backend",
+      "maritalStatus": "Unmarried",
+      "id": 13
+    },
+    {
+      "name": "rohit",
+      "gender": "Male",
+      "role": "Devloper",
+      "maritalStatus": "Unmarried",
+      "id": 14
+    },
+    {
+      "name": "rohit yadav",
+      "gender": "Female",
+      "role": "backend",
+      "maritalStatus": "Married",
+      "id": 15
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+                                    // ***************map function ****************
+
+    let arr1= [1,2,3,4];
+
+Array.prototype.mymap = function(func){
+
+
+        let newarr = [];
+    for(let i=0;i<this.length;i++){
+
+        let element =this[i]
+
+        let x = func(element)
+
+        newarr.push(x);
+        
+        console.log(x);
+    }
+
+    return newarr;
+};
+
+let x = arr1.mymap(function(x){
+    return x*3;
+});
+
+console.log(x);
+
+
+                        //  ************************foreach*****************************
+
+ Array.prototype.myforeach = function(func){
+
+     for(let i=0;i<this.length;i++){
+    let bag = "";
+
+let element =  this[i]
+
+let y = func(element)
+
+bag+=y+" ";
+
+console.log(bag);
+}
+
+
+};
+
+let y = arr1.myforeach(function(y){
+return y;
+});
+
+                    //    ************************filter*********************************
+
+
+Array.prototype.myfilter = function(func){
+
+
+let newarr2 = [];
+for(let i=0;i<this.length;i++){
+
+
+
+let z = func(this[i])
+
+newarr.push(z);
+
+console.log(z);
+}
+
+return newarr;
+};
+
+let z = arr1.mymap(function(z){
+return z%3==0;
+}); 
+console.log(z)
+
+
+
+
+
+
+
+</script>
+
+
+

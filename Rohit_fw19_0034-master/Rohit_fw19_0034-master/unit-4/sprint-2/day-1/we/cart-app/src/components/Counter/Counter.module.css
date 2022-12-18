@@ -1,0 +1,19 @@
+.style_3{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    gap: 10px;
+}
+.style_2{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(155, 80, 80);
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    border: none;
+}
+.style_2:hover{
+    cursor: pointer;
+    background-color: brown;
+}

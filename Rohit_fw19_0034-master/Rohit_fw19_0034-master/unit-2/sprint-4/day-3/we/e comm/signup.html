@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(236, 225, 195);
+        
+    }
+    div{
+        width: 60%;
+        background-color: blanchedalmond;
+        margin: auto;
+        padding: 10%;
+        
+        
+    }
+    input,button{
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        margin-bottom: 20px;
+        height: 30px;
+        border-radius: 4px;
+        
+    }
+    h1{
+        margin: auto;
+        text-align: center;
+        color: brown;
+        margin-bottom: 50px;
+    }
+    button:hover{
+        cursor: pointer;
+        color: chocolate;
+        background-color: darkkhaki;
+        
+    }
+
+</style>
+</head>
+<body>
+    <div id="main">
+        <form>
+            <h1>Create A New Account</h1>
+            <input type="text" id="name" placeholder="Type Your Name">
+            <input type="email" id="email"  placeholder="Type Your Email">
+            <input type="password" id="password" placeholder="Type Your Password">
+            <button id="signup">SIGN UP</button>
+        </form>
+    </div>
+    
+</body>
+</html>
+<script>
+
+    let form= document.querySelector("form");
+    let userdata= JSON.parse(localStorage.getItem("userdata"))||[];
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let data={
+            name:form.name.value,
+            email: form.email.value,
+            password:form.password.value,
+        }
+        if(checkemail(data.email)===true){
+            userdata.push(data);
+            localStorage.setItem("userdata",JSON.stringify(userdata));
+            window.location.href="signin.html"
+        }else{
+            alert("Account already exists");
+        }
+        
+    })
+
+    function checkemail(email){
+        let filtered = userdata.filter(function (elem){
+            return email === elem.email;
+        })
+
+        if(filtered.length>0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+</script>

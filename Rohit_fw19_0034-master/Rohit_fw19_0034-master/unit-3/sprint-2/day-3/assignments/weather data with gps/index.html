@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        margin: auto;
+       
+        background-color: coral;
+        color: white;
+        font-weight: bold;
+        margin-top: 30px;
+        height: 100vh;
+      }
+      #forsearch{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        background-color: rgb(54, 146, 221);
+        padding: 40px;
+      }
+      #query{
+        width: 270px;
+        height: 27px;
+        border-radius: 15px;
+
+      }
+      #btnsearch{
+        width: 120px;
+        height: 28px;
+        background-color: white;
+        border: transparent;
+      }
+      #btnsearch:hover{
+        cursor: pointer;
+        background-color: cadetblue;
+        color: white;
+        font-weight: bold;
+        
+
+
+      }
+
+      #container{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+        font-weight: bold;
+        
+        width: 100%;
+        margin-right: 20px;
+        height: 100%;
+
+      }
+
+    </style>
+  </head>
+  <body onload="getLocation()">
+    <div id="forsearch">
+        <h1>Check Weather Of Your City</h1>
+        <input type="text" id="query" placeholder="City Name                                                🔍" />
+        <button id="btnsearch" onclick="getdata()">Check Weather</button>
+    </div>
+    
+    <div id="top">
+      <div id="container"></div>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            width="100%"
+            height="800"
+            id="gmap_canvas"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function getdata() {
+    //src="https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+    let city = document.getElementById("query").value;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=81ca4956a5663fbc7494048a82c17803`;
+
+    fetch(url)
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (res) {
+        console.log(res);
+        append(res);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
+
+  function append(data) {
+    let url = `https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+
+    let container = document.getElementById("container");
+    container.style.backgroundColor="brown"
+    container.innerHTML = null;
+
+    let div = document.createElement("div");
+
+    let name = document.createElement("h2");
+    name.innerText = data.name;
+    name.style.color = "black"
+    name.style.fontSize = "40px"
+    name.style.fontWeight = "bolder"
+
+
+    let tempimg = document.createElement("img");
+    tempimg.src = "https://cdn-icons-png.flaticon.com/512/481/481431.png";
+    tempimg.style.width = "40px";
+
+    let temp = document.createElement("p");
+    let x = data.main.temp - 270;
+    temp.innerText = `Temp:- ${x}°C`;
+
+    let mintempimg = document.createElement("img");
+    mintempimg.src = "https://cdn-icons-png.flaticon.com/512/1684/1684374.png   ";
+    mintempimg.style.width = "40px";
+
+    let mintemp = document.createElement("p");
+    let y = data.main.temp_min - 278;
+    mintemp.innerText = `Min Temp:- ${y}°C`;
+
+    let maxtempimg = document.createElement("img");
+    maxtempimg.src = "https://cdn-icons-png.flaticon.com/512/2622/2622386.png";
+    maxtempimg.style.width = "40px";
+
+    let maxtemp = document.createElement("p");
+    let z = data.main.temp_max - 273;
+    maxtemp.innerText = `Max Temp:- ${z}°C`;
+
+    let sunriseimg = document.createElement("img");
+    sunriseimg.src = "https://cdn-icons-png.flaticon.com/512/1146/1146824.png"
+    sunriseimg.style.width = "40px";
+
+    let sunrise = document.createElement("p");
+    sunrise.innerText = `sunrise:- ${data.sys.sunrise}`;
+
+    let sunsetimg = document.createElement("img");
+    sunsetimg.src = "https://cdn-icons-png.flaticon.com/512/6903/6903616.png"
+    sunsetimg.style.width = "40px";
+
+    let sunset = document.createElement("p");
+    sunset.innerText = `sunset:- ${data.sys.sunset}`;
+
+    
+    let windspeedimg = document.createElement("img");
+    windspeedimg.src = "https://cdn-icons-png.flaticon.com/512/622/622079.png"
+    windspeedimg.style.width = "40px";
+
+    let windspeed = document.createElement("p");
+    windspeed.innerText = `Wind-Speed:- ${data.wind.speed} m/s`;
+
+    let cloudimg = document.createElement("img");
+    cloudimg.src = "https://cdn-icons-png.flaticon.com/512/1163/1163624.png"
+    cloudimg.style.width = "40px";
+
+    let cloud = document.createElement("p");
+    cloud.innerText = `Clouds:- ${data.clouds.all} %`;
+
+    cloud.append(cloudimg)
+
+    windspeed.append(windspeedimg);
+
+    sunrise.append(sunriseimg);
+
+    sunset.append(sunsetimg);
+
+    temp.append(tempimg);
+
+    mintemp.append(mintempimg);
+
+    maxtemp.append(maxtempimg);
+
+    div.append(name, temp, mintemp, maxtemp, sunrise, sunset, windspeed, cloud);
+
+    container.append(div);
+
+    let iframe = document.getElementById("gmap_canvas");
+    iframe.src = url;
+  }
+
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(success);
+
+    function success(pos) {
+      const crd = pos.coords;
+
+      console.log("Your current position is:");
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+
+      getdataonlocation(crd.latitude, crd.longitude)
+    }
+  }
+
+  
+
+ 
+
+
+  function getdataonlocation(lat, lon) {
+    //src="https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+   
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=81ca4956a5663fbc7494048a82c17803`
+
+    fetch(url)
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (res) {
+        console.log(res);
+        append(res);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
+</script>

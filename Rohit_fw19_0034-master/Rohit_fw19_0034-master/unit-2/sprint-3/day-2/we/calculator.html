@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        #main {
+
+            display: grid;
+            width: 300px;
+            height: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        #display {
+
+            width: 260px;
+            height: 45px;
+            margin: auto;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        #button {
+
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            grid-template-rows: repeat(4, 50px);
+            gap: 20px 20px;
+            margin: auto;
+            margin-top: 0;
+            font-size: larger;
+            font-weight: bold;
+
+
+        }
+
+        #button>div {
+
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: teal;
+        }
+
+        .black {
+            color: white;
+            background-color: black;
+        }
+
+        .red {
+            color: white;
+            background-color: red;
+        }
+        #button>div:hover{
+            background-color: cadetblue;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="main">
+
+
+        <div id="display"></div>
+
+
+        <div id="button">
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div class="red">C</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
+<script>
+    let keys = document.querySelectorAll("#button > div");
+    let bag="";
+
+    for(let i=0;i<keys.length;i++){
+        keys[i].addEventListener("click",calculator);
+
+    }
+
+    function calculator(event){
+        let input= event.target.innerText;
+
+        if(input == "C"){
+            bag="";
+          document.querySelector("#display").innerText="";  
+        }
+        else if(input == "="){
+            document.querySelector("#display").innerText=eval(bag);
+        }
+        else{
+            bag +=input;
+            document.querySelector("#display").innerText=bag;
+        }
+    }
+</script>

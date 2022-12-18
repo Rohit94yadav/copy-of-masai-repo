@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Check Your Bmi</h1>
+    <h2 id="weight">Put weight in Kg</h2>
+    <input type="Number" name="Weight" placeholder="Enter Weight"  id="display1"  />
+    <h2 id="height">Put Height in Meters</h2>
+    <input type="Number" name="Height" placeholder="Enter Height" id="display2" />
+    <br>
+    <button>Calculate BMI</button>
+    <h2 id="result">Your BMI is</h2>
+
+</body>
+</html>
+<script>
+document.querySelector("button").addEventListener("click",calculateBMI);
+
+function calculateBMI(){
+    let x= document.querySelector("#display1").value
+    let y= document.querySelector("#display2").value
+    let BMI=Number(x)/Number(y)**2;
+    if(BMI<= 18.4){
+        document.querySelector("#result").textContent= "You are Underweight and BMI is "+BMI
+    }
+    else if(BMI>=18.5 && BMI<=24.9){
+        document.querySelector("#result").textContent="You Have Normal weight and BMI is "+BMI
+    }
+    else if(BMI>=25 && BMI<=29.9){
+        document.querySelector("#result").textContent="You are Overweight and BMI is "+BMI 
+    }
+    else{
+        document.querySelector("#result").textContent="You are Obese and BMI is "+BMI
+    }
+
+
+}
+</script>

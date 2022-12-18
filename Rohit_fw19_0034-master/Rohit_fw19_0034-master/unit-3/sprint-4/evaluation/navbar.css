@@ -1,0 +1,11 @@
+#navbar{
+    display: flex;
+    padding: 30px;
+    background-color: burlywood;
+    justify-content: center;
+    gap: 50px;
+}
+#search_input{
+    width: 80%;
+    height: 30px;
+}

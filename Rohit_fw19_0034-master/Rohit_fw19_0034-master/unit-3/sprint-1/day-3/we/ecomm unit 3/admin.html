@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" onsubmit="Submit(event)" action="">
+        <input type="text" placeholder="Product Name" id="name">
+        <input type="text" placeholder="Catagory" id="catagory">
+
+        
+        <input type="url" id="image" name="image" accept="image/*" placeholder="Image">
+        
+        <input type="number" placeholder="Price" id="price">
+
+        <select  id="gender">
+            <option >gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        
+        
+        <input type="text" id="sold" value="False">
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
+<script>
+
+    let arr =JSON.parse(localStorage.getItem("products")) || [];
+    
+    function Submit(event){
+        event.preventDefault();
+        let form = document.getElementById("form");
+        let name = form.name.value;
+        let catagory=form.catagory.value;
+        let image = form.image.value;
+        let price = form.price.value;
+        let gender = document.getElementById("gender").value;
+        let sold= form.sold.value;
+
+        let Product= new ecommproducts(name,catagory,image,price,gender,sold);
+        arr.push(Product);
+        console.log(arr);
+        localStorage.setItem("products",JSON.stringify(arr));
+
+    }
+
+
+    function ecommproducts(n,c,i,p,g,s){
+        this.name= n;
+        this.catagory=c;
+        this.image=i;
+        this.price=p;
+        this.gender=g;
+        this.sold=s;
+    }
+</script>

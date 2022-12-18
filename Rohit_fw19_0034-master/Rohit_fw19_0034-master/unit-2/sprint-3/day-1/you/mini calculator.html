@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini calculator</title>
+</head>
+<body>
+    <input type="Number" name="enter first number" id="first" />
+    <input type="Number" name="enter second number" id="second" />
+
+    <button onclick="addnum()">Add</button>
+    <button onclick="subnum()">Subtract</button>
+    <button onclick="multnum()">Multiply</button>
+    <button onclick="divnum()">Divide</button>
+</body>
+</html>
+<script>
+    function addnum(){
+            let value1= document.getElementById("first").value;
+            let value2= document.getElementById("second").value;
+            let ans=Number(value1)+Number(value2);
+            alert( ans );
+    }
+    function subnum(){
+            let value1= document.getElementById("first").value;
+            let value2= document.getElementById("second").value;
+            let ans=Number(value1)-Number(value2);
+            alert( ans );
+    }
+    function multnum(){
+            let value1= document.getElementById("first").value;
+            let value2= document.getElementById("second").value;
+            let ans=Number(value1)*Number(value2);
+            alert( ans );
+    }
+    function divnum(){
+            let value1= document.getElementById("first").value;
+            let value2= document.getElementById("second").value;
+            let ans=Number(value1)/Number(value2);
+            alert( ans );
+    }
+</script>

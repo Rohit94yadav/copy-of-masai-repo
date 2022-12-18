@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  
+
+class meetingroom1 {
+
+    #type;
+    #room1color;
+    #room1number
+
+
+    constructor(type, room1color, num) {
+
+        this.#type = type
+        this.#room1color = room1color
+        this.#room1number = num
+
+    }
+
+    get room1number() {
+
+        return `MH ${this.#room1number}`
+    }
+
+    get type(){
+
+        return this.#type
+    }
+
+}
+
+
+//room1,room2,room3
+
+//super, extends
+
+class room1 extends meetingroom1 {
+
+    constructor(room1color, num) {
+
+        super('room1', room1color, num)
+    }
+
+}
+
+
+class room2 extends meetingroom1 {
+
+    constructor(room1color, num) {
+
+        super('room2', room1color, num)
+    }
+
+}
+
+class room3 extends meetingroom1 {
+
+    constructor(room1color, num) {
+
+        super('room3', room1color, num)
+    }
+
+}
+
+// let room11 = new room1('black',1234)
+
+
+
+
+class meetingarea {
+
+    #floors;
+
+    constructor(number) {
+
+        this.#floors = []
+        this.numberOfFloors = number
+
+        for (let i = 0; i < number; i++) {
+
+            this.#floors[i] = new meetingfloor(i, number)
+
+        }
+
+    }
+
+    findSlot(type) {
+    console.log('type:', type)
+
+        //type of meetingroom1 & empty slot 
+
+        for (let i = 0; i < this.numberOfFloors; i++) {
+
+            //iterating through slots
+
+            for (let slot of this.#floors[i].meetingspots) {
+
+                if (slot.type === type && !slot.isBooked) {
+
+                    return { floornumber: i, slot: slot }
+
+                }
+
+            }
+
+
+        }
+
+
+        return false;
+    }
+
+
+    parkmeetingroom1(meetingroom1) {
+
+
+         let slot = this.findSlot(meetingroom1.type)
+
+         slot.slot.book= true
+      
+        
+
+    }
+}
+
+
+class meetingfloor {
+
+    #floornumber;
+
+    constructor(floornumber, maxFloor) {
+
+        this.#floornumber = floornumber
+        this.meetingspots = []
+
+        for (let i = 0; i < maxFloor; i++) {
+
+            //depending on floornumber push meetingroom1
+
+            if (i === 0) {
+
+                this.meetingspots.push(new Slot('room3', i))
+            }
+            else if (i == 1) {
+
+                this.meetingspots.push(new Slot('room2', i))
+
+            }
+            else {
+                this.meetingspots.push(new Slot('room1', i))
+
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+}
+
+
+
+class Slot {
+
+    #isBooked;
+
+    constructor(type, number) {
+
+        //number -> floornumber
+        this.number = number
+        this.type = type
+        this.#isBooked = false
+
+    }
+
+    get isBooked(){
+
+        return this.#isBooked
+    }
+
+
+    set book(bool)
+{
+
+    this.#isBooked = bool
+}
+}
+
+
+let p = new meetingarea(3)
+console.log('p:', p)
+
+let c1 = new room1('black',9999)
+
+let b1 = new room2('black',999)
+
+
+
+p.parkmeetingroom1(b1)
+</script>

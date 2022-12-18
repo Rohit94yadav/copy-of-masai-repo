@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-Up</title>
+    <style>
+      body{
+        background-color: darkkhaki;
+      }
+      #navbar  {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 100px;
+        justify-content: center;
+        align-items: center;
+        
+        gap: 30px;
+        font-size: larger;
+        font-weight: bolder;
+      }
+      #home {
+        color: white;
+      }
+      #signUp {
+        color: white;
+      }
+
+      #form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+      input {
+        width: 550px;
+        height: 40px;
+      }
+      button{
+        width: 100px;
+        height: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <button><a href="./index.html">HOME</a></button>
+    <div id="navbar">
+     
+      <h1>User Sign Up</h1>
+     
+        <input type="text" placeholder="NAME" id="name">
+        <input type="email" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password">
+        <button id="sign_up">Signup</button>
+    </div>
+
+  </body>
+</html>
+<script src="./jsFiles/signup.js"></script>

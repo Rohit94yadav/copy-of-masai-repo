@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      #groceries{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+       gap: 20px;
+       margin-left: 30px;
+      }
+      .item{
+        display: flex;
+        width: 350px;
+        height: 500px;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+
+      }
+      .item > img{
+        width: 300px;
+        height: 250px;
+      }
+
+      #navbar{
+        display: flex;
+        justify-content: end;
+        gap: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <div>login</div>
+      <div>Sign-Up</div>
+      <!-- Give cart link for navigation with id:- cart   -->
+      <button id="cart" ><a href="./cart.html">cart</a></button>
+      <!-- For wallet amount Show only number i.e only "500", no extra text like "amount = 500" with id :- "wallet" -->
+      <div id="wallet">700</div>
+    </div>
+
+    <!--Show all groceries here in grid format-->
+    <!-- add an add to cart button to each item, give it HTML class as 'add_to_cart' -->
+    <div id="groceries">
+
+    </div>
+  </body>
+</html>
+<script src ="./scripts/index.js">
+  
+</script>

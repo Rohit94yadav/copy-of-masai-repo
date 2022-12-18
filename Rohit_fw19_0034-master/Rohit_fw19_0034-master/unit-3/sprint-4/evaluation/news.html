@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detailed news</title>
+    <link rel="stylesheet" href="./navbar.css">
+    <style>
+      #detailed_news{
+
+display: grid;
+grid-template-columns: 60%;
+grid-template-rows: auto;
+justify-content: center;
+gap: 20px;
+margin: auto;
+margin-top: 40px;
+}
+#detailed_news>div{
+display: flex;
+flex-direction: column;
+width: 600px;
+
+}
+img{
+width: 500px;
+height: 200px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      
+    </div>
+    <!-- Same navbar with same functionality  -->
+    <!-- Append detailed news in div with id "detailed_news"  -->
+    <div id="detailed_news"></div>
+  </body>
+</html>
+
+<script src="./scripts/news.js" type="module"></script>

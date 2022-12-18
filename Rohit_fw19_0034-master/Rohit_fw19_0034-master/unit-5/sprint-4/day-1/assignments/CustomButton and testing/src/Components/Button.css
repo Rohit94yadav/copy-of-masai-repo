@@ -1,0 +1,22 @@
+.btn{
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+
+.red{
+    background-color: red;
+}
+
+.ghost{
+    border: none;
+}
+
+.green{
+    background-color: green;
+}
+
+.bordered{
+    border: 1px solid yellow;
+}

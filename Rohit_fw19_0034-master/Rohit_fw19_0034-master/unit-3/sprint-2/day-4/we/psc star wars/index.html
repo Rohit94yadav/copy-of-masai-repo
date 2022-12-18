@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/star-wars-order.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      #top {
+        display: flex;
+        margin: auto;
+        margin-top: 230px;
+        justify-content: center;
+      }
+      #query {
+        width: 33%;
+        height: 30px;
+        border-radius: 15px;
+        border: none;
+        padding: 3px;
+      }
+      #show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width: 505px;
+        height: auto;
+        border: 1px solid blue;
+        overflow: scroll;
+        background-color: transparent;
+        color: black;
+      }
+
+      #show>div{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid red;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: aliceblue;
+        
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      <input type="text" id="query" placeholder="Search" oninput="debounce(main, 700)" />
+    </div>
+    <div id="show"></div>
+  </body>
+</html>
+<script>
+
+    let id;
+  async function getdata() {
+    let query = document.getElementById("query").value;
+    let url = ` https://swapi.dev/api/people/?search=${query}`;
+
+    let res = await fetch(url);
+
+    let data = await res.json();
+    
+    console.log(data);
+
+    return data.results;
+  }
+
+  function append(data) {
+      let container = document.getElementById("show");
+      container.innerHTML=null;
+
+    data.forEach(function (el) {
+        let div = document.createElement("div");
+      let name = document.createElement("h2");
+      name.innerText = el.name;
+
+      let birthyear = document.createElement("p");
+      birthyear.innerText = el.birth_year;
+
+         let eye_color = document.createElement("h2");
+         eye_color.innerText = el.eye_color;
+
+         let gender = document.createElement("p");
+         gender.innerText = `Gender:- ${el.gender}`;
+
+       let height = document.createElement("h2");
+       height.innerText = `${el.height}cm`;
+
+       div.append(name, birthyear, eye_color, gender, height);
+      container.append(div);
+    });
+  }
+
+ async function main(){
+
+    let data = await getdata();
+
+    append(data);
+  }
+
+  function debounce(func, delay){
+
+    if(id){
+        clearTimeout(id);
+    }
+    id = setTimeout(function(){
+        func();
+    },delay)
+  }
+</script>

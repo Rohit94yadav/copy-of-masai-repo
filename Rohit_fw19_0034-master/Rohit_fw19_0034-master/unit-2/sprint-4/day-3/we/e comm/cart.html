@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        #products{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            gap: 15px 20px;
+            padding: 20px;
+        }
+
+        #products>div>img{
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        h1{
+            color: brown;
+        }
+        h2{
+            color: darkmagenta;
+            margin-top: 5px;
+        }
+        h3{
+            color: rgb(36, 66, 94);
+            margin-top: 5px;
+        }
+        button{
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid red;
+            padding: 5px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: firebrick;
+            font-weight: bolder;
+            color: antiquewhite;
+            
+        }
+        #Filter{
+            padding: 5px;
+            margin-left: 2%;
+            border-radius: 4px;
+        }
+        #Filter:hover{
+            cursor: pointer;
+            color: rgb(58, 59, 46);
+            background-color: rgb(253, 255, 255);
+        }
+    </style>
+
+</head>
+<body>
+    <div id="products"></div>
+</body>
+</html>
+
+<script>
+
+let productconst = document.getElementById("products");
+
+let cartls = JSON.parse(localStorage.getItem("cartpage")) || [];
+
+
+function displayproduct(productData){
+      productconst.innerHTML=null;  
+    productData.forEach(function(elem){
+
+
+        let product = document.createElement("div");
+
+        let img= document.createElement("img");
+        img.src = elem.img;
+        
+        let name = document.createElement("h1")
+        name.textContent= elem.name;
+        
+        let brand = document.createElement("h3");
+        brand.textContent= elem.brand
+
+        let price = document.createElement("h2");
+        price.textContent= elem.price;
+
+        let size= document.createElement("h3");
+        size.textContent= elem.size;
+
+        let productid= document.createElement("h2");
+        productid.textContent= elem.productID;
+
+        let catagory = document.createElement("h2");
+        catagory.textContent= elem.catagory;
+
+        let deletecart= document.createElement("button");
+        deletecart.textContent="DELETE";
+
+        deletecart.addEventListener("click",function(){
+
+            
+            Delete(elem.productID);
+        })
+
+        product.append(img,brand,name,price,size,productid,catagory,deletecart);
+        productconst.append(product);
+
+    })
+  }
+
+  displayproduct(cartls);
+
+  function Delete(id){
+    let deleted= cartls.filter(function(el){
+        return el.productID != id;
+    })
+    cartls= deleted;
+    localStorage.setItem("cartpage",JSON.stringify(cartls));
+    displayproduct(cartls);
+  }
+
+
+</script>

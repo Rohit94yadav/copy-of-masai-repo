@@ -1,0 +1,11 @@
+.isActive {
+  color: red;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.default {
+  color: teal;
+  text-decoration: none;
+  padding: 20px;
+}

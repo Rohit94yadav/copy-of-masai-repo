@@ -1,0 +1,6 @@
+{
+  "posts": [
+    { "id": "1", "title": "nem101", "content": "backend", "author": "rohit" },
+    { "id": "4", "title": "xavc", "content": "backend", "author": "rohit" }
+  ]
+}

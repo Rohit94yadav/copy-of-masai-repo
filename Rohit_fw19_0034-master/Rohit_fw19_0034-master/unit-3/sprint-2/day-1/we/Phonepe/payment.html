@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            font-style: inherit;
+            background-color: rgb(66, 165, 66);
+
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <img id="images" src="https://gifimage.net/wp-content/uploads/2018/04/loading-bar-gif-transparent-9.gif" alt="">
+        <h1 id="head">Connecting Securely</h1>
+    </div>
+    
+</body>
+</html>
+<script>
+    
+
+
+    function bankserver(){
+
+        return false;
+    }
+
+    let paymentpromise = new Promise(function(resolve, reject){
+
+        let pin = bankserver();
+
+        setTimeout(function(){
+            if(pin){
+            resolve("Payment Successfull")
+        }else{
+            reject("Try Later");
+        }
+        },3000)
+
+        
+    });
+
+    let image = document.getElementById("images");
+    let heading = document.getElementById("head");
+    
+    let div = document.getElementById("main");
+    
+   
+
+    async function content(){
+        try{
+            let res = await paymentpromise;
+            console.log(res);
+            div.style.backgroundColor="rgb(66, 165, 66);"
+            image.src= "https://agazella.com/wp-content/uploads/2021/03/payment_successful.gif"
+            heading.style.color="white"
+            heading.innerText="Payment of ₹1 to Rohit Yadav Successfull."
+           
+            
+        }
+        catch(err){
+            console.log(err)
+            image.src= "https://quicksavaari.com/failed.gif"
+            heading.innerText="";
+        }
+    }
+    content();
+
+console.log(paymentpromise)
+</script>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            gap: 100px;
+            font-weight: bolder;
+            font-size: larger;
+            color: rgb(85, 18, 18);
+            background-color: coral;
+        }
+        #navbar>h2{
+            background-color: burlywood;
+            padding: 15px;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+           
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 100px;
+        }
+        #container>div{
+            display: grid;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <h2 id="web15">ft-web-15</h2>
+        <h2 id="web16">ft-web-16</h2>
+        <h2 id="web17">ft-web-17</h2>
+        <h2 id="web18">ft-web-18</h2>
+        <h2 id="web19">ft-web-19</h2>
+    </div>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+
+
+function append(){
+    let data = JSON.parse(localStorage.getItem("students")) || [];
+    let container=document.getElementById("container");
+    container.innerHTML=null;
+
+    data.forEach(function(el,index){
+
+        let div = document.createElement('div');
+
+        let img = document.createElement('img');
+        img.src= el.image;
+
+        let name= document.createElement("h2");
+        name.innerText=el.name;
+
+        let course= document.createElement("h3");
+        course.innerText=el.course
+
+        let unit=document.createElement("h3");
+        unit.innerText=el.unit;
+
+        let batch=document.createElement('h2');
+        batch.innerText=el.batch;
+
+        let btn= document.createElement('button');
+        btn.innerText="Remove";
+        btn.addEventListener("click", function() {
+
+            remove(index);
+        });
+
+        div.append(img,name,course,unit,batch,btn);
+
+        container.append(div);
+    });
+}
+append()
+
+function remove(index){
+    let data = JSON.parse(localStorage.getItem("students")) || [];
+
+    let newdata = data.filter(function(el,i){
+        if( i === index){
+            let trash = JSON.parse(localStorage.getItem("trash")) || [];
+            trash.push(el);
+            localStorage.setItem("trash",JSON.stringify(trash));
+        }else{
+            return i !== index;
+        }
+    });
+    localStorage.setItem("students",JSON.stringify(newdata));
+    append();
+}
+function counter(){
+        let data = JSON.parse(localStorage.getItem("students")) || [];
+
+        let obj= {}; 
+
+        for(let i=0 ; i < data.length ; i++){
+            if(obj[data[i].batch]===undefined){
+                obj[data[i].batch]=1;
+            
+        }else{
+            obj[data[i].batch]++
+        }
+    }
+    console.log(obj)
+    
+    
+    document.getElementById("web15").textContent=`ft-web-15 (${Object.values(obj)[3]})`
+    document.getElementById("web16").textContent=`ft-web-16 (${Object.values(obj)[0]})`
+    document.getElementById("web17").textContent=`ft-web-17 (${Object.values(obj)[4]})`
+    document.getElementById("web18").textContent=`ft-web-18 (${Object.values(obj)[2]})`
+    document.getElementById("web19").textContent=`ft-web-19 (${Object.values(obj)[1]})`
+    
+
+    }
+
+    counter();
+
+
+</script>

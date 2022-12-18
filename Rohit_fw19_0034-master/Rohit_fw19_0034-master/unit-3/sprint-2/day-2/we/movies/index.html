@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            background-color: brown;
+            color: white;
+        }
+        #main>div{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            margin-top: 50px;
+           
+        }
+        #up{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            background-color: brown;
+            padding: 30px;
+            color: white;
+        }
+
+        #search{
+            width: 350px;
+            height: 30px;
+            margin-bottom: 30px;
+        }
+        
+        #forsearch{
+            width: 120px;
+            height: 30px;
+            font-size: large;
+            font-weight: bold;
+        }
+        #forsearch:hover{
+            cursor: pointer;
+            color: rgb(99, 46, 8);
+            background-color: darkgray;
+        }
+
+        #error{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+           
+            justify-content: center;
+            align-items: center;
+            background-color: brown;
+            padding: 30px;
+            color: white;
+        }
+        #mainimage{
+            width: 30%;
+            height: 400px;
+        }
+
+
+
+        
+    </style>
+  </head>
+  <body>
+    <div id="up">
+        <h1 id="forerror">Search Your Favourite Movies Here ↓</h1>
+        
+        <input type="text" id="search" placeholder=" Search Movies                                                              🔍 " name="search"  />
+        <button id="forsearch" onclick="gosearch()">Search</button>
+       
+    </div>
+    <div id="error">
+        
+        <img id="mainimage" src="https://c.tenor.com/5fH9ObHehzEAAAAM/movies-film.gif" alt="">
+    </div>
+    
+    <div id="main"></div>
+  </body>
+</html>
+<script>
+  
+
+  
+
+  function append(Search) {
+    main.innerHTML=null;
+   
+    Search.forEach(function (el) {
+      let main = document.getElementById("main");
+      
+
+      let img = document.createElement("img");
+      img.src = el.Poster;
+
+      let title = document.createElement("h2");
+      title.innerText = el.Title;
+        
+
+      let imdb = document.createElement("h3");
+      imdb.innerText = el.imdbID;
+
+      let year = document.createElement("h3");
+      year.innerText = el.Year;
+
+      let div = document.createElement("div");
+
+      div.append(img, title, imdb, year);
+      main.append(div);
+    });
+  }
+
+  function gosearch() {
+
+   
+     let search= document.getElementById("search");
+     let img = document.getElementById("mainimage");
+     let head = document.getElementById("forerror");
+
+     const url = "http://www.omdbapi.com/?apikey=7c90c6c3&S="+search.value;
+
+  fetch(url)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (res) {
+      console.log(res);
+      append(res.Search);
+      img.src="http://images.toscana-database.eu/Icon/scrolldown.gif";
+    })
+    .catch(function (err) {
+        head.innerText="NO MOVIE FOUND"
+        img.src="http://38.media.tumblr.com/9b30ed9604ca4964971cc2fcfcd2bd21/tumblr_nrbcrya6Fb1qjrwyno1_1280.gif";
+      console.log(err);
+    });
+
+     
+    
+      
+     
+
+
+
+    
+  }
+</script>

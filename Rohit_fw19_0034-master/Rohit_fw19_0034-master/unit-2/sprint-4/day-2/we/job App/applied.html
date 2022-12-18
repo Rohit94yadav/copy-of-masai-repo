@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+    <style>
+      tbody>tr>td:last-child{
+        background-color: red;
+        cursor: pointer;
+        
+      }
+      select{
+        margin-left: 170px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 7px;
+      }
+      select:hover{
+        color: brown;
+        background-color: aqua;
+      }
+     tbody>tr>td:last-child:hover{
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <select name="" id="sortname" onChange="namesort()">
+      <option value="">Sort By Name</option>
+      <option value="Ascending">Ascending</option>
+      <option value="Descending">Decending</option>
+    </select>
+
+    <select name="" id="sortsalary" onChange="salarysort()">
+      <option value="">Sort By Salary</option>
+      <option value="Ascending">Ascending</option>
+      <option value="Descending">Decending</option>
+    </select>
+
+    <select name="" id="filter" onChange="filtering()">Filter By Role
+      <option value="Filter By Role">Filter By Role</option>
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+      <option value="FSD">FSD</option>
+    </select>
+
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+            
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    let arrFromLs= JSON.parse(localStorage.getItem("jobdata"))
+    function namesort(){
+      let selected =document.querySelector("#sortname").value
+
+      if(selected=="Ascending"){
+        arrFromLs.sort(function(a,b){
+          if(a.name>b.name) return 1
+          if(a.name<b.name) return -1
+          return 0
+        })
+        displatTable(arrFromLs)
+      }
+
+      if(selected=="Descending"){
+        arrFromLs.sort(function(a,b){
+          if(a.name>b.name) return -1
+          if(a.name<b.name) return 1
+          return 0
+        })
+        displatTable(arrFromLs)
+      }
+    }
+
+    function salarysort(){
+      let salaryselected =document.querySelector("#sortsalary").value
+
+      if(salaryselected=="Ascending"){
+        arrFromLs.sort(function(a,b){
+        return a.salary-b.salary
+        })
+        displatTable(arrFromLs)
+      }
+
+      if(salaryselected=="Descending"){
+        arrFromLs.sort(function(a,b){
+          return b.salary- a.salary
+        })
+        displatTable(arrFromLs)
+      }
+    }
+
+    function filtering(){
+      let selected= document.querySelector("#filter").value
+      let filteredlist= arrFromLs.filter(function(elem){
+        return elem.role == selected;
+      })
+      displatTable(filteredlist)
+    }
+
+
+    let bookmarkarr = JSON.parse(localStorage.getItem("bookmarkdata")) || [];
+    function displatTable(arrFromLs){
+      document.querySelector("tbody").innerHTML="";
+      arrFromLs.forEach(function(elem){
+        let tr=document.createElement("tr");
+
+        let td1=document.createElement("td");
+        td1.innerText=elem.name
+        let td2=document.createElement("td");
+        td2.innerText=elem.email
+        let td3=document.createElement("td");
+        td3.innerText=elem.role
+        let td4=document.createElement("td");
+        td4.innerText=elem.salary
+        let td5=document.createElement("td");
+
+        td5.innerText="Bookmark"
+        
+        td5.addEventListener("click", function () {
+          bookmarkfun(elem);
+         });
+
+        tr.append(td1,td2,td3,td4,td5)
+        document.querySelector("tbody").append(tr);
+      });
+    }
+    displatTable(arrFromLs)
+
+    function bookmarkfun(elem){
+      bookmarkarr.push(elem)
+      localStorage.setItem("bookmarkdata",JSON.stringify(bookmarkarr))
+      
+    }
+  </script>
+</html>

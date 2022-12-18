@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            height: 400px;
+            background-color: blue;
+            margin: auto;
+            justify-content: center;
+            padding: 80px;
+        }
+        input{
+            height: 27px;
+            margin-bottom: 20px;
+
+        }
+        button{
+            height: 37px;
+            font-size: larger;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input placeholder="Enter Pin" type="password" id="pass" name="pin"
+        maxlength="6" required>
+        <button "><a href="payment.html">Proceed to Pay</a></button>
+    </div>
+   
+</body>
+</html>
+<script>
+    let inp = document.getElementById("pass");
+    inp.innerText= "123456";
+    
+</script>
+

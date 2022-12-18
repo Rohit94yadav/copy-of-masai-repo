@@ -1,0 +1,99 @@
+/* Fill CSS here */
+h1{
+    text-align: center;
+    color: rgb(17, 104, 131);
+    
+}
+div{
+    display: flex;
+    justify-content: space-around;
+}
+form{
+   display: grid;
+   margin: auto;
+ 
+   width: 20%;
+   margin-left: 30px;
+  padding: 15px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form>label{
+    height: 7px;
+}
+form>select{
+    height: 30px;
+}
+form>input:last-child{
+    border-radius: 15px;
+    color: white;
+    background-color: #0567ab;
+   height: 35px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+form > input{
+    display: grid;
+    margin-top: 0px;
+    padding: 0px;
+    height: 30px;
+    
+}
+table{
+    border-collapse: collapse;
+    width: 70%;
+   
+    text-align: center;
+}
+
+thead>tr{
+    display: flex;
+    margin: auto;
+    border: 1px solid white;
+    text-align: center;
+    margin-right: 150px;
+
+}
+
+tr>th{
+    border: 1px solid white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #0567ab;
+    color: white;
+    width: 120px;
+    text-align: center;
+}
+
+tbody>tr{
+    display: flex;
+    margin: auto;
+    border: 1px solid white;
+    text-align: center;
+    
+    padding: 5px;
+    margin-right: 150px;
+   
+}
+
+tr > td1,td2,td3,td4,td5,td6,td7td8{
+    border: 1px solid black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    width: 120px;
+    text-align: center;
+    justify-content: center;
+    
+}
+*{
+    box-sizing: border-box;
+}
+table tr:hover{
+ background-color: green;
+}

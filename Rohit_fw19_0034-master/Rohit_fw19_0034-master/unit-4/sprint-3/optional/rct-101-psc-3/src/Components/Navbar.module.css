@@ -1,0 +1,18 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    font-weight: 900;
+    padding: 30px;
+    background-color: rgb(214, 93, 93);
+}
+
+.Active{
+    color: red;
+  
+  }
+  
+  .default{
+    color:rgb(12, 85, 55);
+    
+  
+  }

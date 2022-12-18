@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "learn redux",
+      "status": false
+    },
+    {
+      "id": 2,
+      "title": "hee",
+      "status": false
+    },
+    {
+      "id": 3,
+      "title": "ggg",
+      "status": false
+    },
+    {
+      "id": 4,
+      "title": "ggg",
+      "status": false
+    },
+    {
+      "id": 5,
+      "title": "ccc",
+      "status": false
+    },
+    {
+      "id": 6,
+      "title": "xx",
+      "status": false
+    },
+    {
+      "id": 7,
+      "title": "aaa",
+      "status": false
+    },
+    {
+      "id": 8,
+      "title": "ttt",
+      "status": false
+    }
+  ]
+}

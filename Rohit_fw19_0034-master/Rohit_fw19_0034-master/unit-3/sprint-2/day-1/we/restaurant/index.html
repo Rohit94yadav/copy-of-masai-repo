@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            gap: 100px;
+            margin-top: 30px;
+            background-color: brown;
+            padding: 40px;
+            text-align: left;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        #imgdiv{
+            display: flex;
+            width: 50%;
+            height: 400px;
+            margin: auto;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        #heading{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="main">
+        <div>
+            <input type="checkbox" id="food1" name="food1" value="burger" />
+            <label for="food1"> aloo tikki burger</label><br />
+            <button onclick="checkCheckbox()">Order</button>
+          </div>
+      
+          <div>
+            <input type="checkbox" id="food2" name="food2" value="Pizza" />
+            <label for="food2"> Pizza</label><br />
+            <button onclick="checkCheckbox1()">Order</button>
+          </div>
+      
+          <div>
+            <input type="checkbox" id="food3" name="food3" value="veg wrap" />
+            <label for="food3"> veg wrap</label><br />
+            <button onclick="checkCheckbox2()">Order</button>
+          </div>
+      
+          <div>
+            <input type="checkbox" id="food4" name="food4" value="hotdog" />
+            <label for="food3"> Hotdog</label><br />
+            <button onclick="checkCheckbox3()">Order</button>
+          </div>
+    </div>
+
+    <div id="imgdiv">
+        <img
+      id="images"
+      src="https://media3.giphy.com/media/o9hzIlJ4ijpAs/200.gif"
+      alt=""
+    />
+</div>
+    <div id="heading">
+        <h2>Order Your Food By Selecting Item</h2>
+    </div>
+    
+
+    
+  </body>
+</html>
+<script>
+  let image = document.getElementById("images");
+
+  let inp1 = document.getElementById("food1");
+
+  let inp2 = document.getElementById("food2");
+
+  let inp3 = document.getElementById("food2");
+
+  let inp4 = document.getElementById("food2");
+
+  let orderid = document.getElementById("heading");
+
+  function foodordered() {
+    return true;
+  }
+
+  let orderyourfood = new Promise(function (resolve, reject) {
+    let foodavilable = foodordered();
+
+    if (foodavilable) {
+      resolve("Order successfull");
+    } else {
+      reject("Try Later");
+    }
+  });
+
+  function checkCheckbox() {
+    image.src="https://c.tenor.com/IC7XXjqoQugAAAAC/stickergiant-on-the-way.gif";
+    orderid.innerText="Order Is About To Come"
+    setTimeout(function () {
+      async function content() {
+        if (inp1.checked === true) {
+          try {
+            let res = await orderyourfood;
+            console.log(res);
+
+            image.src =
+              "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80";
+              orderid.innerText="OrderID-12345";
+            } catch (err) {
+            console.log(err);
+            image.src = "https://quicksavaari.com/failed.gif";
+          }
+        }
+      }
+      content();
+    }, 3000);
+  }
+
+  function checkCheckbox1() {
+    image.src="https://c.tenor.com/IC7XXjqoQugAAAAC/stickergiant-on-the-way.gif";
+    orderid.innerText="Order Is About To Come"
+    setTimeout(function () {
+      async function content() {
+        if (inp2.checked === true) {
+          try {
+            let res = await orderyourfood;
+            console.log(res);
+
+            image.src =
+              "https://c.ndtvimg.com/2021-01/78btgdc_pizza_625x300_15_January_21.jpg";
+              orderid.innerText="OrderID-22346";
+          } catch (err) {
+            console.log(err);
+            image.src = "https://quicksavaari.com/failed.gif";
+          }
+        }
+      }
+      content();
+    }, 3000);
+  }
+
+  function checkCheckbox2() {
+    image.src="https://c.tenor.com/IC7XXjqoQugAAAAC/stickergiant-on-the-way.gif";
+    orderid.innerText="Order Is About To Come"
+    setTimeout(function () {
+      async function content() {
+        if (inp3.checked === true) {
+          try {
+            let res = await orderyourfood;
+            console.log(res);
+
+            image.src =
+              "https://static.onecms.io/wp-content/uploads/sites/44/2019/08/26232414/4548031.jpg";
+              orderid.innerText="OrderID-22347";
+          } catch (err) {
+            console.log(err);
+            image.src = "https://quicksavaari.com/failed.gif";
+          }
+        }
+      }
+      content();
+    }, 3000);
+  }
+
+
+  function checkCheckbox3() {
+    image.src="https://c.tenor.com/IC7XXjqoQugAAAAC/stickergiant-on-the-way.gif";
+    orderid.innerText="Order Is About To Come"
+    setTimeout(function () {
+      async function content() {
+        if (inp4.checked === true) {
+          try {
+            let res = await orderyourfood;
+            console.log(res);
+
+            image.src =
+              "https://image.shutterstock.com/image-photo/hot-dog-grilled-sausage-bun-260nw-1362586331.jpg";
+              orderid.innerText="OrderID-32348";
+          } catch (err) {
+            console.log(err);
+            image.src = "https://quicksavaari.com/failed.gif";
+          }
+        }
+      }
+      content();
+    }, 3000);
+  }
+
+  console.log(orderyourfood);
+</script>

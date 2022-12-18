@@ -1,0 +1,200 @@
+{
+  "product" :[
+       {
+   "id":1,
+        "name": "ASOS DESIGN satin wrap shirt with single button in brown",
+   "price": 453.75,
+   "color": "MULTI",
+  "size": "x,xl,xxl",
+   "productID":"jacket10",
+   "brand":  "ASOS",
+   "discount": "-20%",
+   "catagory": "Outwear",
+   "responsible": "recycled",
+   "bodyfit": "Extra Wide Fit",
+   "img": "https://images.asos-media.com/products/asos-design-satin-wrap-shirt-with-single-button-in-brown/201188813-1-taupe?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":2, 
+  "name": "ASOS DESIGN oversized batwing shirt in textured cotton",
+   "price": 382.20,
+   "color": "WHITE",
+  "size": "s,m,l",
+   "productID": "jacket10",
+   "brand": "Versace Jeans Couture",
+   "discount": "-30%",
+   "catagory": "Outwear",
+   "responsible": "recycled",
+   "bodyfit": "Plus",
+   "img": "https://images.asos-media.com/products/asos-design-oversized-batwing-shirt-in-textured-cotton/201223783-1-white?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":3, 
+  "name": "Versace Jeans Couture slim fit shirt blue wash",
+   "price": 350.40,
+   "color": "BLUE",
+  "size": "l,xl,xxl",
+   "productID": "jeans10",
+   "brand": "Versace Jeans Couture",
+   "discount": "-20%",
+   "catagory": "Jeans & Trousers",
+   "responsible": "Sustainable Materials",
+   "bodyfit": "tall",
+   "img": "https://images.asos-media.com/products/hunky-trunks-beach-shirt-in-green-stripe/23510090-1-green?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":4, 
+  "name": "Carhartt WIP vernon  with removable liner in black",
+   "price": 327.60,
+   "color": "BLUE",
+  "size": "x,xl,xxl",
+   "productID": "jacket10",
+   "brand": "Carhartt WIP",
+   "discount": "-30%",
+   "catagory": "Outwear",
+   "responsible": "Sustainable Materials",
+   "bodyfit": "Plus",
+   "img": "https://images.asos-media.com/products/hunky-trunks-beach-shirts-in-blue-tropical-print/23510080-1-blue?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":5, 
+  "name": "Another Influence denim long sleeve pocket shirt",
+   "price": 11.75,
+   "color": "BLUE",
+  "size": "l,xl,xxl",
+   "productID": "shirt10",
+   "brand": "denim",
+   "discount": "-60%",
+   "catagory": "Dresses",
+   "responsible": "recycled",
+   "bodyfit": "Main Collection",
+   "img": "https://images.asos-media.com/products/another-influence-denim-long-sleeve-pocket-shirt/201067728-1-blue?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":6, 
+  "name": "Another Influence denim long sleeve pocket shirt",
+   "price": 11.75,
+   "color": "MULTI",
+  "size": "l,xl,xxl",
+   "productID": "shirt10",
+   "brand": "denim",
+   "discount": "-60%",
+   "catagory": "Dresses",
+   "responsible": "recycled",
+   "bodyfit": "Main Collection",
+   "img": "https://images.asos-media.com/products/threadbare-check-shirt-in-black/201509441-1-black?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":7, 
+  "name": "Hollister shirts in black/red with logo",
+   "price": 21.00,
+   "color": "BLACK",
+  "size": "s,m,l",
+   "productID": "slippers10",
+   "brand": "Hollister",
+   "discount": "-20%",
+   "catagory": "Footwear",
+   "responsible": "Sustainable Materials",
+   "bodyfit": "Plus",
+   "img": "https://images.asos-media.com/products/reebok-button-down-shirt-in-black-exclusive-to-asos/24412680-1-black?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":8, 
+  "name": "COLLUSION Unisex oversized shirt with high shine print in pique acid wash",
+   "price": 13.00,
+   "color": "RED",
+  "size": "l,xl,xxl",
+   "productID": "tshirt10",
+   "brand": "COLLUSION",
+   "discount": "-10%",
+   "catagory": "All in ones",
+   "responsible": "recycled",
+   "bodyfit": "Wide Fit",
+   "img": "https://images.asos-media.com/products/vans-jacobson-shirt-in-red/201886934-1-red?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":9, 
+  "name": "ASOS DESIGN linen slub co-ord in teal",
+   "price": 23.00,
+   "color": "TEAL",
+  "size": "l,xl,xxl",
+   "productID": "shoes10",
+   "brand": "ASOS",
+   "discount": "-40%",
+   "catagory": "Footwear",
+   "responsible": "recycled",
+   "bodyfit": "Wide Fit",
+   "img": "https://images.asos-media.com/products/selected-homme-long-sleeve-linen-shirt-in-blue/203020491-1-skyway?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":10, 
+  "name": "Brave Soul chunky bracelet watch in silver",
+   "price": 20.00,
+   "color": "SILVER",
+  "size": "One",
+   "productID": "watch10",
+   "brand": "Brave Soul",
+   "discount": "-70%",
+   "catagory": "Jwellery & Watches",
+   "responsible": "Sustainable Materials",
+   "bodyfit": "Main Collection",
+   "img": "https://images.asos-media.com/products/devils-advocate-lace-long-sleeve-shirt/201938993-1-green?$n_320w$&wid=317&fit=constrain"
+},
+
+
+{
+  "id":11, 
+  "name": "New Look relaxed fit pull on shirts with pintuck in lilac",
+   "price": 9.00,
+   "color": "WHITE",
+  "size": "l,xl,xxl",
+   "productID": "shorts10",
+   "brand": "ASOS",
+   "discount": "-50%",
+   "catagory": "Shorts",
+   "responsible": "Sustainable Materials",
+   "bodyfit": "Wide Fit",
+   "img": "https://images.asos-media.com/products/asos-design-regular-satin-jacquard-shirt-in-stone/202079956-1-stone?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":12, 
+  "name": "ASOS DESIGN recycled oversized square shirt with yellow lens in brown tortoiseshell",
+   "price": 5.00,
+   "color": "MULTI",
+  "size": "One",
+   "productID": "spex10",
+   "brand": "RAYBAN",
+   "discount": "-60%",
+   "catagory": "Accessories",
+   "responsible": "Sustainable Materials",
+   "bodyfit": "Wide Fit",
+   "img": "https://images.asos-media.com/products/collusion-unisex-oversized-linen-check-shirt/201864118-1-multi?$n_320w$&wid=317&fit=constrain"
+},
+
+{
+  "id":13, 
+  "name": "ASOS DESIGN satin wrap shirt with single button in brown",
+   "price": 453.75,
+   "color": "MULTI",
+  "size": "x,xl,xxl",
+   "productID":"jacket10",
+   "brand":  "ASOS",
+   "discount": "-20%",
+   "catagory": "Outwear",
+   "responsible": "recycled",
+   "bodyfit": "Extra Wide Fit",
+   "img": "https://images.asos-media.com/products/asos-design-satin-wrap-shirt-with-single-button-in-brown/201188813-1-taupe?$n_320w$&wid=317&fit=constrain"
+}
+  ]
+  
+ }
